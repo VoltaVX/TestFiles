@@ -99,11 +99,16 @@
               "branches": {
                 "stable": {
                   "configBranch": "stable",
-                  "config": "https://example.com/laptops/asus/rog-gl502vs/catalina/stable/config.plist",
-                  "bootloaderNeeded": {
+                  "bootloader": {
                     "openCore": {
                       "bootloaderBranch": "Stable",
-                      "bootloaderVersion": "0.6.2"
+                      "bootloaderVersion": "0.6.2",
+                      "config": "https://example.com/laptops/asus/rog-gl502vs/catalina/stable/opencore/config.plist"
+                    },
+                    "clover": {
+                      "bootloaderBranch": "Stable",
+                      "bootloaderVersion": "v25000",
+                      "config": "https://example.com/laptops/asus/rog-gl502vs/catalina/stable/clover/config.plist"
                     }
                   },
                   "kextsNeeded": {
