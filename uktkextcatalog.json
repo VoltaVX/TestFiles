@@ -25,17 +25,17 @@
             "description": "Arbitrary kext and process patching on macOS",
             "versions": [
                 {
-                    "versions": "1.4.8",
+                    "version": "1.4.8",
                     "updateNotes": "Added MacKernelSDK with Xcode 12 compatibility\\n Removed kern_atomic.hpp due to MacKernelSDK implementation\\n Acidanthera MacKernelSDK is now required for all plugins Fixed Lilu loading on macOS 10.6 (not all APIs will be functional)\\n Fixed plugin debug log not working with Lilu disabled",
                     "downloadURL": "https://github.com/acidanthera/Lilu/releases/download/1.4.8/Lilu-1.4.8-RELEASE.zip"
                 },
                 {
-                    "versions": "1.4.7",
+                    "version": "1.4.7",
                     "updateNotes": "Added more platform headers for plugin compilation\\n Fixed symbol chainloading regression in 1.4.6",
                     "downloadURL": "https://github.com/acidanthera/Lilu/releases/download/1.4.7/Lilu-1.4.7-RELEASE.zip"
                 },
                 {
-                    "versions": "1.4.6",
+                    "version": "1.4.6",
                     "updateNotes": "Added preliminary definitions for 11.0 support\\n Temporarily disabled user patcher for 11.0\\n Added external-audio property to ignore PCI audio cards\\n Added in-memory symbol solving for 11.0\\n Fixed accidentally solving stabs instead of normal symbols\\n Added device publishing API to monitor device startup\\n Added DeviceInfo caching for improved performance\\n Added implicit slotted (medium) patches in KC mode to reduce patch size",
                     "downloadURL": "https://github.com/acidanthera/Lilu/releases/download/1.4.6/Lilu-1.4.6-RELEASE.zip"
                 }
