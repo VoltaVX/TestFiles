@@ -1,141 +1,203 @@
 {
-  "catalog": "uktkextcatalog",
-  "version": "0.1.0",
-  "bootLoaders": {
-    "openCore": {
-      "bootloaderName": "OpenCore",
-      "bootloaderDescription": "OpenCore is what we refer to as a \"boot loader\" – this is a complex piece of software that we use to prepare our systems for macOS – specifically by injecting new data for macOS such as SMBIOS, ACPI tables and kexts",
-      "branches": {
-        "stable": {
-          "bootloaderBranch": "stable",
-          "versions": {
-            "v062": {
-              "bootloaderVersion": "0.6.2",
-              "bootloaderDownload": "https://github.com/acidanthera/OpenCorePkg/releases/download/0.6.2/OpenCore-0.6.2-RELEASE.zip",
-              "bootloaderUpdateNotes": "Updated builtin firmware versions for SMBIOS and the rest\\n Added ProcessorType option to Generic allowing custom CPU names\\n Fixed UnblockFsConnect option not working with APFS JumpStart\\n Added IA32 binary variant to the release bundles\\n Fixed improper handling of cacheless kexts without an Info.plist\\n Fixed improper calculation of kext startup address for blocking\\n Added mkext 32-bit kext injection (10.4-10.6)\\n Added cacheless 32-bit kext injection (10.4-10.7)\\n Added 32-bit kernel/kext patching/blocking support\\n Fixed issues loading 10.7 EfiBoot\\n Added Type to ReservedMemory to fulfil hibernation hack needs\\n Added workaround to displaying Preboot instead of Macintosh HD\\n Added prelinkedkernel 32-bit kext injection (10.6-10.7)\\n Added SystemMemoryStatus to override memory replacement on some models\\n Added older Pentium CPU recognition in SMBIOS\\n Added ExtendBTFeatureFlags to properly set FeatureFlags for Bluetooth (which substitutes BT4LEContinuityFixup)\\n Added MinKernel/MaxKernel to CPUID emulation and DummyPowerManagement\\n Fixed -legacy not being added in KernelArch Auto mode\\n Fixed i386-user32 not forcing i386 on macOS 10.7 on X64 firmwares\\n Fixed i386-user32 being incorrectly enabled in macOS 10.4, 10.5, and 10.7\\n Disabled prelinked boot for macOS 10.4 and 10.5 in KernelCache Auto mode\\n Fixed macserial compatibility with iMac20,x serials and other models from 2020\\n Added LegacyCommpage quirk to improve pre-SSSE3 userspace compatibility\\n Fixed legacy SATA HDDs displaying as external drives in the picker"
-            }
-          }
-        },
-        "beta": {
-          "bootloaderBranch": "beta",
-          "versions": {
-            "v063": {
-              "bootloaderVersion": "0.6.3",
-              "bootloaderDownload": "https://example.com",
-              "bootloaderUpdateNotes": "TBA"
-            }
-          }
-        },
-        "devel": {
-          "bootloaderBranch": "devel",
-          "versions": {
-            "v064": {
-              "bootloaderVersion": "0.6.4",
-              "bootloaderDownload": "https://example.com",
-              "bootloaderUpdateNotes": "TBA"
-            }
-          }
-        }
-      }
-    }
-  },
-  "kextCat": {
-    "lilu": {
-      "kextName": "Lilu",
-      "kextDescription": "Arbitrary kext and process patching on macOS",
-      "branches": {
-        "stable": {
-          "kextBranch": "Stable",
-          "versions": {
-            "v148": {
-              "kextVersion": "1.4.8",
-              "kextDownload": "https://github.com/acidanthera/Lilu/releases/download/1.4.8/Lilu-1.4.8-RELEASE.zip",
-              "updateNotes": "Added MacKernelSDK with Xcode 12 compatibility\\n Removed kern_atomic.hpp due to MacKernelSDK implementation\\n Acidanthera MacKernelSDK is now required for all plugins Fixed Lilu loading on macOS 10.6 (not all APIs will be functional)\\n Fixed plugin debug log not working with Lilu disabled"
-            },
-            "v147": {
-              "kextVersion": "1.4.7",
-              "kextDownload": "https://github.com/acidanthera/Lilu/releases/download/1.4.7/Lilu-1.4.7-RELEASE.zip",
-              "updateNotes": "Added more platform headers for plugin compilation\\n Fixed symbol chainloading regression in 1.4.6"
-            },
-            "v146": {
-              "kextVersion": "1.4.6",
-              "kextDownload": "https://github.com/acidanthera/Lilu/releases/download/1.4.6/Lilu-1.4.6-RELEASE.zip",
-              "updateNotes": "Added preliminary definitions for 11.0 support\\n Temporarily disabled user patcher for 11.0\\n Added external-audio property to ignore PCI audio cards\\n Added in-memory symbol solving for 11.0\\n Fixed accidentally solving stabs instead of normal symbols\\n Added device publishing API to monitor device startup\\n Added DeviceInfo caching for improved performance\\n Added implicit slotted (medium) patches in KC mode to reduce patch size"
-            }
-          },
-          "beta": {
-            "kextBranch": "Beta",
-            "versions": {
-              "v149": {
-                "kextVersion": "1.4.9",
-                "kextDownload": "https://github.com/acidanthera/Lilu/releases/download/1.4.9/Lilu-1.4.9-DEBUG.zip",
-                "updateNotes": "Added the PCI GMCH Graphics Control register definition. (by 0xFireWolf)\\n Added a new API to solve multiple symbols in one shot conveniently. (by 0xFireWolf)\\n Added a new RouteRequest constructor to work with function pointers without additional type castings. (by 0xFireWolf)"
-              }
-            }
-          },
-          "devel": {
-            "kextBranch": "devel",
-            "versions": {
-              "v150": {
-                "kextVersion": "1.5.0",
-                "kextDownload": "https://example.com",
-                "updateNotes": "yes"
-              }
-            }
-          }
-        }
-      }
-    }
-  },
-  "autoKext": {
-    "desktops": {},
-    "laptops": {
-      "asus": {
-        "rog-gl502vs": {
-          "laptopName": "Asus ROG-GL502vs",
-          "macOSVer": {
-            "catalina": {
-              "macOSVer": "macOS Catalina",
-              "branches": {
-                "stable": {
-                  "configBranch": "stable",
-                  "bootloader": {
-                    "openCore": {
-                      "bootloaderBranch": "Stable",
-                      "bootloaderVersion": "0.6.2",
-                      "config": "https://example.com/laptops/asus/rog-gl502vs/catalina/stable/opencore/config.plist"
-                    },
-                    "clover": {
-                      "bootloaderBranch": "Stable",
-                      "bootloaderVersion": "v25000",
-                      "config": "https://example.com/laptops/asus/rog-gl502vs/catalina/stable/clover/config.plist"
-                    }
-                  },
-                  "kextsNeeded": {
-                    "lilu": {
-                      "kextBranch": "Stable",
-                      "kextVersion": "1.4.8"
-                    }
-                  }
+    "catalog": "uktkextcatalog",
+    "catVersion": "0.1.0",
+    "bootloaders": [
+        {
+            "name": "OpenCore",
+            "description": "OpenCore is what we refer to as a \"boot loader\" – this is a complex piece of software that we use to prepare our systems for macOS – specifically by injecting new data for macOS such as SMBIOS, ACPI tables and kexts",
+            "versions": [
+                {
+                    "version": "0.6.3",
+                    "updateNotes": "TBA",
+                    "downloadURL": "https://github.com/acidanthera/OpenCorePkg/releases/download/0.6.3/OpenCore-0.6.3-RELEASE.zip"
                 },
-                "beta": {},
-                "devel": {}
-              }
-            },
-            "highSierra": {
-              "macOSVer": "macOS High Sierra",
-              "branches": {
-                "stable": {
-                  "configBranch": "stable"
-                },
-                "beta": {},
-                "devel": {}
-              }
-            }
-          }
+                {
+                    "version": "0.6.2",
+                    "updateNotes": "Updated builtin firmware versions for SMBIOS and the rest\\n Added ProcessorType option to Generic allowing custom CPU names\\n Fixed UnblockFsConnect option not working with APFS JumpStart\\n Added IA32 binary variant to the release bundles\\n Fixed improper handling of cacheless kexts without an Info.plist\\n Fixed improper calculation of kext startup address for blocking\\n Added mkext 32-bit kext injection (10.4-10.6)\\n Added cacheless 32-bit kext injection (10.4-10.7)\\n Added 32-bit kernel/kext patching/blocking support\\n Fixed issues loading 10.7 EfiBoot\\n Added Type to ReservedMemory to fulfil hibernation hack needs\\n Added workaround to displaying Preboot instead of Macintosh HD\\n Added prelinkedkernel 32-bit kext injection (10.6-10.7)\\n Added SystemMemoryStatus to override memory replacement on some models\\n Added older Pentium CPU recognition in SMBIOS\\n Added ExtendBTFeatureFlags to properly set FeatureFlags for Bluetooth (which substitutes BT4LEContinuityFixup)\\n Added MinKernel/MaxKernel to CPUID emulation and DummyPowerManagement\\n Fixed -legacy not being added in KernelArch Auto mode\\n Fixed i386-user32 not forcing i386 on macOS 10.7 on X64 firmwares\\n Fixed i386-user32 being incorrectly enabled in macOS 10.4, 10.5, and 10.7\\n Disabled prelinked boot for macOS 10.4 and 10.5 in KernelCache Auto mode\\n Fixed macserial compatibility with iMac20,x serials and other models from 2020\\n Added LegacyCommpage quirk to improve pre-SSSE3 userspace compatibility\\n Fixed legacy SATA HDDs displaying as external drives in the picker",
+                    "downloadURL": "https://github.com/acidanthera/OpenCorePkg/releases/download/0.6.2/OpenCore-0.6.2-RELEASE.zip"
+                }
+            ]
         }
-      }
-    },
-    "tablets": {}
-  }
+    ],
+    "kextcatalog": [
+        {
+            "name": "Lilu",
+            "description": "Arbitrary kext and process patching on macOS",
+            "versions": [
+                {
+                    "versions": "1.4.8",
+                    "updateNotes": "Added MacKernelSDK with Xcode 12 compatibility\\n Removed kern_atomic.hpp due to MacKernelSDK implementation\\n Acidanthera MacKernelSDK is now required for all plugins Fixed Lilu loading on macOS 10.6 (not all APIs will be functional)\\n Fixed plugin debug log not working with Lilu disabled",
+                    "downloadURL": "https://github.com/acidanthera/Lilu/releases/download/1.4.8/Lilu-1.4.8-RELEASE.zip"
+                },
+                {
+                    "versions": "1.4.7",
+                    "updateNotes": "Added more platform headers for plugin compilation\\n Fixed symbol chainloading regression in 1.4.6",
+                    "downloadURL": "https://github.com/acidanthera/Lilu/releases/download/1.4.7/Lilu-1.4.7-RELEASE.zip"
+                },
+                {
+                    "versions": "1.4.6",
+                    "updateNotes": "Added preliminary definitions for 11.0 support\\n Temporarily disabled user patcher for 11.0\\n Added external-audio property to ignore PCI audio cards\\n Added in-memory symbol solving for 11.0\\n Fixed accidentally solving stabs instead of normal symbols\\n Added device publishing API to monitor device startup\\n Added DeviceInfo caching for improved performance\\n Added implicit slotted (medium) patches in KC mode to reduce patch size",
+                    "downloadURL": "https://github.com/acidanthera/Lilu/releases/download/1.4.6/Lilu-1.4.6-RELEASE.zip"
+                }
+            ]
+        }
+    ],
+    "autokext": [
+        {
+            "computerName": "Asus ROG-GL502VS",
+            "platform": "laptop",
+            "macOSVersions": [
+                {
+                    "name": "macOS Big Sur",
+                    "branches": [
+                        {
+                            "branch": "Stable",
+                            "bootloaders": [
+                                {
+                                    "name": "OpenCore",
+                                    "versions": [
+                                        {
+                                            "bootloaderVersion": "0.6.3",
+                                            "configVer": "1.0.0",
+                                            "configPLIST": "https://example.com/laptops/asus/rog-gl502vs/catalina/stable/opencore/config.plist"        
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Clover",
+                                    "versions": [
+                                        {
+                                            "bootloaderVersion": "v25000",
+                                            "configVer": "1.0.0",
+                                            "configPLIST": "https://example.com/laptops/asus/rog-gl502vs/catalina/stable/clover/config.plist"        
+                                        }
+                                    ]
+                                }
+                            ],
+                            "kexts": [
+                                {
+                                    "name": "Lilu",
+                                    "versions": [
+                                        {
+                                            "version": "1.4.8"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "branch": "Beta",
+                            "bootloaders": [
+                                {
+                                    "name": "OpenCore",
+                                    "bootloaderVersion": "0.6.4",
+                                    "configVer": "1.1.0",
+                                    "configPLIST": "https://example.com/laptops/asus/rog-gl502vs/catalina/stable/opencore/config.plist"
+                                },
+                                {
+                                    "name": "Clover",
+                                    "bootloaderVersion": "v26000",
+                                    "configVer": "1.1.0",
+                                    "configPLIST": "https://example.com/laptops/asus/rog-gl502vs/catalina/stable/clover/config.plist"
+                                }
+                            ],
+                            "kexts": [
+                                {
+                                    "name": "Lilu",
+                                    "version": "1.4.9"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "macOS Catalina",
+                    "branches": [
+                        {
+                            "branch": "Stable",
+                            "bootloaders": [
+                                {
+                                    "name": "OpenCore",
+                                    "bootloaderVersion": "0.6.3",
+                                    "configVer": "1.0.0",
+                                    "configPLIST": "https://example.com/laptops/asus/rog-gl502vs/catalina/stable/opencore/config.plist"
+                                },
+                                {
+                                    "name": "Clover",
+                                    "bootloaderVersion": "v25000",
+                                    "configVer": "1.0.0",
+                                    "configPLIST": "https://example.com/laptops/asus/rog-gl502vs/catalina/stable/clover/config.plist"
+                                }
+                            ],
+                            "kexts": [
+                                {
+                                    "name": "Lilu",
+                                    "version": "1.4.8"
+                                }
+                            ]
+                        },
+                        {
+                            "branch": "Beta",
+                            "bootloaders": [
+                                {
+                                    "name": "OpenCore",
+                                    "bootloaderVersion": "0.6.4",
+                                    "configVer": "1.1.0",
+                                    "configPLIST": "https://example.com/laptops/asus/rog-gl502vs/catalina/stable/opencore/config.plist"
+                                },
+                                {
+                                    "name": "Clover",
+                                    "bootloaderVersion": "v26000",
+                                    "configVer": "1.1.0",
+                                    "configPLIST": "https://example.com/laptops/asus/rog-gl502vs/catalina/stable/clover/config.plist"
+                                }
+                            ],
+                            "kexts": [
+                                {
+                                    "name": "Lilu",
+                                    "version": "1.4.9"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "news": [
+        {
+            "title": "Alpha 1 is Here!",
+            "identifier": "alpha-one-is-here",
+            "caption": "VXKextUtils now features kext updating",
+            "tintColor": "8A28F7",
+            "date": "2020-11-22",
+            "notify": false
+        }
+    ],
+    "updates": [
+        {
+            "branches": [
+                {
+                    "branch": "Stable",
+                    "versions": [
+                        {
+                            "version": "0.1.0",
+                            "updateNotes": "VXKextUtils now features kext updating",
+                            "downloadURL": "https://github.com/voltavx/vxkextutils/releases/download/0.1.0/VXKextUtil-0.1.0-RELEASE.zip"        
+                        }
+                    ]
+                },
+                {
+                    "branch": "Beta",
+                    "versions": [
+                        {
+                            "version": "0.2.0",
+                            "updateNotes": "VXKextUtils now features something new",
+                            "downloadURL": "https://github.com/voltavx/vxkextutils/releases/download/0.2.0/VXKextUtil-0.2.0-RELEASE.zip"        
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
 }
