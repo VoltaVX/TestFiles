@@ -130,7 +130,17 @@
                                         {
                                             "bootloaderVersion": "0.6.3",
                                             "configVer": "1.0.0",
-                                            "configPLIST": "https://example.com/laptops/asus/rog-gl502vs/catalina/stable/opencore/config.plist"        
+                                            "configPLIST": "https://example.com/laptops/asus/rog-gl502vs/catalina/stable/opencore/config.plist",
+                                            "kexts": [
+                                                {
+                                                    "name": "Lilu",
+                                                    "versions": [
+                                                        {
+                                                            "version": "1.4.8"
+                                                        }
+                                                    ]
+                                                }
+                                            ]        
                                         }
                                     ]
                                 },
@@ -140,17 +150,17 @@
                                         {
                                             "bootloaderVersion": "v25000",
                                             "configVer": "1.0.0",
-                                            "configPLIST": "https://example.com/laptops/asus/rog-gl502vs/catalina/stable/clover/config.plist"        
-                                        }
-                                    ]
-                                }
-                            ],
-                            "kexts": [
-                                {
-                                    "name": "Lilu",
-                                    "versions": [
-                                        {
-                                            "version": "1.4.8"
+                                            "configPLIST": "https://example.com/laptops/asus/rog-gl502vs/catalina/stable/clover/config.plist",
+                                            "kexts": [
+                                                {
+                                                    "name": "Lilu",
+                                                    "versions": [
+                                                        {
+                                                            "version": "1.4.8"
+                                                        }
+                                                    ]
+                                                }
+                                            ]      
                                         }
                                     ]
                                 }
@@ -165,7 +175,17 @@
                                         {
                                             "bootloaderVersion": "0.6.4",
                                             "configVer": "1.1.0",
-                                            "configPLIST": "https://example.com/laptops/asus/rog-gl502vs/catalina/stable/opencore/config.plist"        
+                                            "configPLIST": "https://example.com/laptops/asus/rog-gl502vs/catalina/stable/opencore/config.plist",
+                                            "kexts": [
+                                                {
+                                                    "name": "Lilu",
+                                                    "versions": [
+                                                        {
+                                                            "version": "1.4.8"
+                                                        }
+                                                    ]
+                                                }
+                                            ]     
                                         }
                                     ]
                                 },
@@ -175,15 +195,19 @@
                                         {
                                             "bootloaderVersion": "v26000",
                                             "configVer": "1.1.0",
-                                            "configPLIST": "https://example.com/laptops/asus/rog-gl502vs/catalina/stable/clover/config.plist"        
+                                            "configPLIST": "https://example.com/laptops/asus/rog-gl502vs/catalina/stable/clover/config.plist",
+                                            "kexts": [
+                                                {
+                                                    "name": "Lilu",
+                                                    "versions": [
+                                                        {
+                                                            "version": "1.4.8"
+                                                        }
+                                                    ]
+                                                }
+                                            ]  
                                         }
                                     ]
-                                }
-                            ],
-                            "kexts": [
-                                {
-                                    "name": "Lilu",
-                                    "version": "1.4.9"
                                 }
                             ]
                         }
